@@ -4,7 +4,7 @@ const skillCategories = [
   {
     title: 'Mobile Development',
     icon: '📱',
-    skills: ['React Native', 'JavaScript', 'TypeScript', 'iOS', 'Android', 'Expo', 'Redux', 'REST APIs'],
+    skills: ['React Native', 'JavaScript', 'TypeScript', 'iOS', 'Android', 'Xcode', 'Android Studio', 'Expo', 'Redux', 'REST APIs'],
   },
   {
     title: 'Project Management',
@@ -22,9 +22,14 @@ const skillCategories = [
     skills: ['AI Coding Tools (Cursor, Copilot, Emergent)', 'Google Flow (AI Video)', 'Video Editing', 'AI Prompt Engineering', 'Firebase', 'Stripe', 'SendBird', 'Razorpay', 'Git', 'CI/CD'],
   },
   {
+    title: 'AI Prompt Skills',
+    icon: '✨',
+    skills: ['AI Prompt Engineering', 'ChatGPT', 'Claude', 'Cursor Prompts', 'Rapid Prototyping', 'Build Anything'],
+  },
+  {
     title: 'Web Development',
     icon: '🌐',
-    skills: ['Web Application Development', 'Deployment', 'React', 'REST APIs'],
+    skills: ['React', 'Next.js', 'Vue', 'Vite', 'Tailwind CSS', 'Node.js', 'REST APIs', 'Deployment', 'Web Application Development'],
   },
 ]
 
