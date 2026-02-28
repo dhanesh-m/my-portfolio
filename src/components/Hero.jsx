@@ -27,9 +27,9 @@ const statItem = {
   }),
 }
 
-const headlineWords = ["This", "is", "the", "age", "of"]
-const aiLine = "AI development."
-const leadingLine = "I'm leading it."
+const headlineWords = ["Versatile", "Developer", "&"]
+const aiLine = "Project Manager"
+const leadingLine = "With Cursor, I build anywhere"
 
 export default function Hero() {
   return (
@@ -121,7 +121,7 @@ export default function Hero() {
             variants={wordReveal}
             className="text-sm text-[#00D9A5] font-medium"
           >
-            React Native · AI-Native Development · Project Management
+            With Cursor, I build across the stack · React Native · Project Management
           </motion.span>
         </motion.div>
 
@@ -166,15 +166,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          6+ years shipping production apps. Now at the forefront—building with Cursor, Copilot,
-          Emergent for code, and Google Flow for AI video. Not adapting to the future.{' '}
-          <motion.span
-            className="text-white font-medium"
-            animate={{ opacity: [1, 0.85, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            Creating it.
-          </motion.span>
+          Cursor, Copilot, Emergent—AI tools that let me ship mobile, web, and full-stack. Project
+          planning, Agile delivery, and team leadership.
         </motion.p>
 
         {/* Buttons - staggered with hover glow */}
@@ -215,7 +208,7 @@ export default function Hero() {
             whileTap={{ scale: 0.98 }}
             className="px-8 py-4 rounded-xl border-2 border-white/20 text-white font-medium hover:bg-white/5 transition-all duration-300"
           >
-            My Story
+            About Me
           </motion.a>
         </motion.div>
 
