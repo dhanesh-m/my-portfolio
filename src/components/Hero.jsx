@@ -17,16 +17,6 @@ const wordReveal = {
   },
 }
 
-const statItem = {
-  hidden: { opacity: 0, scale: 0.5, y: 30 },
-  visible: (i) => ({
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: { delay: 0.7 + i * 0.12, type: 'spring', stiffness: 120, damping: 12 },
-  }),
-}
-
 const headlineWords = ["Versatile", "Developer", "&"]
 const aiLine = "Project Manager"
 const leadingLine = "With Cursor, I build anywhere"
@@ -88,94 +78,44 @@ export default function Hero() {
       ))}
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        {/* Name - slide in with glow */}
-        <motion.p
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-gray-400 text-lg md:text-xl mb-5"
-        >
-          Hi, I'm{' '}
-          <motion.span
-            className="text-white font-semibold"
-            animate={{ textShadow: ['0 0 20px rgba(0,217,165,0.2)', '0 0 40px rgba(0,217,165,0.4)', '0 0 20px rgba(0,217,165,0.2)'] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            Dhanesh M
-          </motion.span>
-        </motion.p>
-
-        {/* Badge - animated border */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-[#00D9A5]/40 bg-[#00D9A5]/5 mb-8 animate-border-flow"
-        >
-          <motion.span
-            animate={{ scale: [1, 1.3, 1], opacity: [1, 0.6, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-2 h-2 rounded-full bg-[#00D9A5]"
-          />
-          <motion.span
-            variants={wordReveal}
-            className="text-sm text-[#00D9A5] font-medium"
-          >
-            With Cursor, I build across the stack · React Native · Project Management
-          </motion.span>
-        </motion.div>
-
         {/* Headline - word by word reveal */}
         <motion.h1
           variants={container}
           initial="hidden"
           animate="visible"
-          className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.2] tracking-tight mb-6"
+          className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white uppercase leading-[1.3] tracking-wide mb-6"
         >
-          <div className="flex flex-wrap justify-center gap-x-2 gap-y-1">
-            {headlineWords.map((word, i) => (
-              <motion.span key={i} variants={wordReveal} className="inline-block">
-                {word}
-              </motion.span>
-            ))}
-          </div>
-          <motion.span
-            variants={wordReveal}
-            className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#00D9A5] via-[#00E5B3] to-[#00B894] bg-[length:200%_auto] animate-gradient"
-          >
-            {aiLine}
-          </motion.span>
-          <motion.span
-            variants={wordReveal}
-            className="block mt-3 relative inline-block"
-          >
-            {leadingLine}
+          <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
+              {headlineWords.map((word, i) => (
+                <motion.span key={i} variants={wordReveal} className="inline-block">
+                  {word}
+                </motion.span>
+              ))}
+            </div>
             <motion.span
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 0.9, duration: 0.5, ease: 'easeOut' }}
-              className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00D9A5] origin-left"
-            />
-          </motion.span>
+              variants={wordReveal}
+              className="text-white font-bold uppercase tracking-wide"
+            >
+              {aiLine}
+            </motion.span>
+          </div>
+          <div className="inline-block mt-3 px-5 py-2 rounded-none bg-[#00D9A5]/30">
+            <motion.span
+              variants={wordReveal}
+              className="block text-2xl md:text-3xl text-[#00D9A5] font-medium uppercase"
+            >
+              {leadingLine}
+            </motion.span>
+          </div>
         </motion.h1>
-
-        {/* Subtext - fade with stagger */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed"
-        >
-          Cursor, Copilot, Emergent—AI tools that let me ship mobile, web, and full-stack. Project
-          planning, Agile delivery, and team leadership.
-        </motion.p>
 
         {/* Buttons - staggered with hover glow */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center mt-16"
         >
           <motion.a
             href="#contact"
@@ -199,47 +139,6 @@ export default function Hero() {
           >
             View Projects
           </motion.a>
-          <motion.a
-            href="#about"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9 }}
-            whileHover={{ scale: 1.05, borderColor: 'rgba(0, 217, 165, 0.6)' }}
-            whileTap={{ scale: 0.98 }}
-            className="px-8 py-4 rounded-xl border-2 border-white/20 text-white font-medium hover:bg-white/5 transition-all duration-300"
-          >
-            About Me
-          </motion.a>
-        </motion.div>
-
-        {/* Stats - bounce in */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          className="mt-20 flex justify-center gap-12 md:gap-16 text-gray-500"
-        >
-          {[
-            { value: '6+', label: 'Years Experience' },
-            { value: 'AI-First', label: 'Development Approach' },
-          ].map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              variants={statItem}
-              custom={i}
-              className="text-center min-w-[120px]"
-            >
-              <div className="h-9 flex items-center justify-center mb-2">
-                <motion.span
-                  className="font-display font-bold text-2xl text-white leading-none"
-                  whileHover={{ scale: 1.15, color: '#00D9A5' }}
-                >
-                  {stat.value}
-                </motion.span>
-              </div>
-              <div className="text-sm">{stat.label}</div>
-            </motion.div>
-          ))}
         </motion.div>
       </div>
 

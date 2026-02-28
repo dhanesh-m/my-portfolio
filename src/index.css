@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
   --color-accent: #00D9A5;
 }
 
@@ -18,7 +18,7 @@ body {
   margin: 0;
   background: #0A0E14;
   color: #E6EDF3;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
