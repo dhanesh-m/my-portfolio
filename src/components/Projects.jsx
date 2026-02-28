@@ -24,7 +24,7 @@ const projects = [
   },
   {
     name: 'Oppam',
-    description: "Malayalam-first emotional support app. Speak and feel heard—connect with trained listeners who understand Kerala's culture and mindset.",
+    description: "Malayalam-first emotional support app. Speak and feel heard. Connect with trained listeners who understand Kerala's culture and mindset.",
     tags: ['React Native', 'Firebase', 'SendBird', 'Razorpay'],
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/in/app/oppam-malayalees-wellness-app/id6751511759' },
@@ -34,7 +34,7 @@ const projects = [
   },
   {
     name: 'Pro Bono Programme',
-    description: "DIFC Courts' Pro Bono Programme. Access to justice—connects individuals in financial hardship with volunteer lawyers for legal advice within DIFC jurisdiction.",
+    description: "DIFC Courts' Pro Bono Programme. Access to justice. Connects individuals in financial hardship with volunteer lawyers for legal advice within DIFC jurisdiction.",
     tags: ['React Native', 'Firebase', 'UAE Passkey'],
     links: [
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=ae.difccourts.probono&hl=en_IN' },
@@ -87,7 +87,7 @@ const cardVariants = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 bg-[#0F1419]/50 relative overflow-hidden">
+    <section id="projects" className="py-16 sm:py-24 md:py-32 bg-[#0F1419]/50 relative overflow-hidden">
       {/* Animated decorative blobs */}
       <motion.div
         animate={{ x: [0, 30, 0], y: [0, -20, 0], scale: [1, 1.1, 1] }}
@@ -100,18 +100,18 @@ export default function Projects() {
         className="absolute bottom-20 left-0 w-96 h-96 bg-blue-500/8 rounded-full blur-[120px]"
       />
 
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-4">
+          <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-3 sm:mb-4">
             Main Projects
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl">
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl">
             Apps that reached thousands of users.
           </p>
         </motion.div>
@@ -121,14 +121,14 @@ export default function Projects() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-120px", amount: 0.1 }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {projects.map((project) => (
             <motion.div
               key={project.name}
               variants={cardVariants}
               whileHover={{ y: -12, scale: 1.02, transition: { duration: 0.3 } }}
-              className="group p-8 rounded-2xl border border-white/5 bg-[#0A0E14]/80 backdrop-blur-sm hover:border-[#00D9A5]/30 hover:shadow-xl hover:shadow-[#00D9A5]/5 transition-all duration-300"
+              className="group p-5 sm:p-6 md:p-8 rounded-2xl border border-white/5 bg-[#0A0E14]/80 backdrop-blur-sm hover:border-[#00D9A5]/30 hover:shadow-xl hover:shadow-[#00D9A5]/5 transition-all duration-300"
             >
               <motion.div
                 whileHover={{ scale: 1.02 }}
@@ -136,7 +136,7 @@ export default function Projects() {
               />
               <div className="relative">
                 <div className="mb-4">
-                  <span className="text-3xl font-bold text-white font-display group-hover:text-[#00D9A5] transition-colors">
+                  <span className="text-2xl sm:text-3xl font-bold text-white font-display group-hover:text-[#00D9A5] transition-colors">
                     {project.name.split(' · ')[0]}
                   </span>
                 </div>

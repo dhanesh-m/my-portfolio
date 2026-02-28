@@ -9,7 +9,7 @@ const fadeUp = {
 
 export default function About() {
   return (
-    <section id="about" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="about" className="py-16 sm:py-24 md:py-32 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -26,13 +26,13 @@ export default function About() {
         transition={{ duration: 6, repeat: Infinity }}
         className="absolute top-1/2 right-0 w-80 h-80 bg-[#00D9A5] rounded-full blur-[120px] -translate-y-1/2"
       />
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="grid md:grid-cols-2 gap-16 items-center"
+          className="grid md:grid-cols-2 gap-10 md:gap-16 items-center"
         >
           <div>
             <motion.h2
@@ -40,7 +40,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display font-bold text-4xl md:text-5xl text-white mt-4 mb-6"
+              className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mt-2 sm:mt-4 mb-4 sm:mb-6"
             >
               Developer first.
               <br />
@@ -57,21 +57,21 @@ export default function About() {
             <motion.p
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.2 }}
-              className="text-gray-400 text-lg leading-relaxed mb-6"
+              className="text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6"
             >
               I started as a React Native developer in 2018, building cross-platform apps
               from the ground up. Over 6+ years, I've shipped production apps, scaled
-              engineering teams, and now lead projects at ZFloc Technologies—where we
+              engineering teams, and now lead projects at ZFloc Technologies, where we
               leverage AI coding tools to build apps faster and smarter.
             </motion.p>
             <motion.p
               {...fadeUp}
               transition={{ ...fadeUp.transition, delay: 0.35 }}
-              className="text-gray-400 text-lg leading-relaxed mb-6"
+              className="text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6"
             >
               I'm excited by AI-native development: tools that generate code, accelerate
               iteration, and let engineers focus on architecture and product. Based in
-              Kochi, India—ready to bring this experience to teams building the next
+              Kochi, India. Ready to bring this experience to teams building the next
               generation of AI-powered apps.
             </motion.p>
             <motion.p
@@ -87,7 +87,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="p-6 md:p-8 rounded-2xl bg-[#0A0E14] border border-white/5 hover:border-[#00D9A5]/20 transition-all duration-300"
+              className="p-4 sm:p-6 md:p-8 rounded-2xl bg-[#0A0E14] border border-white/5 hover:border-[#00D9A5]/20 transition-all duration-300"
             >
               <h3 className="font-display font-bold text-xl text-white mb-3">The Foundation</h3>
               <div className="flex items-start gap-4">
@@ -109,7 +109,7 @@ export default function About() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-[#0F1419] to-[#1A2332] border border-white/5 p-8 flex flex-col justify-center backdrop-blur-sm">
+            <div className="min-h-[260px] sm:min-h-0 sm:aspect-square rounded-2xl bg-gradient-to-br from-[#0F1419] to-[#1A2332] border border-white/5 p-6 sm:p-8 flex flex-col justify-center backdrop-blur-sm">
               <div className="space-y-4">
                 {[
                   'React Native · iOS & Android',

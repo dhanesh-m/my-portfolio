@@ -30,23 +30,23 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="skills" className="py-16 sm:py-24 md:py-32 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="max-w-6xl mx-auto px-6 mb-16"
+        className="max-w-6xl mx-auto px-4 sm:px-6 mb-10 sm:mb-16"
       >
-        <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-4">
+        <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-3 sm:mb-4">
           Skills
         </h2>
-        <p className="text-gray-400 text-lg">
-          Technical depth meets strategic vision—and an eagerness to keep learning.
+        <p className="text-gray-400 text-base sm:text-lg">
+          Technical depth meets strategic vision, and an eagerness to keep learning.
         </p>
       </motion.div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -55,7 +55,7 @@ export default function Skills() {
             hidden: {},
             visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
           }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid sm:grid-cols-2 gap-6 sm:gap-8"
         >
           {skillCategories.map((category, i) => (
             <motion.div
@@ -69,7 +69,7 @@ export default function Skills() {
                 },
               }}
               whileHover={{ y: -10, scale: 1.02, transition: { duration: 0.25 } }}
-              className="p-8 rounded-2xl bg-[#0F1419] border border-white/5 hover:border-[#00D9A5]/20 transition-all duration-300 group"
+              className="p-5 sm:p-6 md:p-8 rounded-2xl bg-[#0F1419] border border-white/5 hover:border-[#00D9A5]/20 transition-all duration-300 group"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -79,7 +79,7 @@ export default function Skills() {
                 className="flex items-center gap-3 mb-6"
               >
                 <span className="text-2xl">{category.icon}</span>
-                <h3 className="font-display font-semibold text-xl text-white">{category.title}</h3>
+                <h3 className="font-display font-semibold text-lg sm:text-xl text-white">{category.title}</h3>
               </motion.div>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, j) => (
@@ -90,7 +90,7 @@ export default function Skills() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 + j * 0.04 }}
                     whileHover={{ scale: 1.08 }}
-                    className="px-4 py-2 rounded-xl text-sm font-medium bg-white/5 text-gray-300 border border-white/5 group-hover:border-[#00D9A5]/10 group-hover:text-[#00D9A5]/90 transition-colors cursor-default"
+                    className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-medium bg-white/5 text-gray-300 border border-white/5 group-hover:border-[#00D9A5]/10 group-hover:text-[#00D9A5]/90 transition-colors cursor-default"
                   >
                     {skill}
                   </motion.span>

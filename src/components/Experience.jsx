@@ -46,23 +46,23 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 md:py-32 bg-[#0F1419]/50 relative overflow-hidden">
+    <section id="experience" className="py-16 sm:py-24 md:py-32 bg-[#0F1419]/50 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="max-w-3xl mx-auto px-6 mb-16"
+        className="max-w-3xl mx-auto px-4 sm:px-6 mb-10 sm:mb-16"
       >
-        <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-4">
+        <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-3 sm:mb-4">
           Journey
         </h2>
-        <p className="text-gray-400 text-lg">
-          From React Native developer to project manager—each stop shaped the journey.
+        <p className="text-gray-400 text-base sm:text-lg">
+          From React Native developer to project manager. Each stop shaped the journey.
         </p>
       </motion.div>
 
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="relative">
           <div className="absolute left-0 md:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#00D9A5]/50 via-white/10 to-transparent" />
 
@@ -91,7 +91,7 @@ export default function Experience() {
                 />
                 <motion.div
                   whileHover={{ x: 6, transition: { duration: 0.2 } }}
-                  className={`p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:border-[#00D9A5]/30 ${
+                  className={`p-4 sm:p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:border-[#00D9A5]/30 ${
                     exp.highlight
                       ? 'bg-[#00D9A5]/5 border-[#00D9A5]/20'
                       : 'bg-[#0A0E14]/80 border-white/5 hover:bg-[#0A0E14]'

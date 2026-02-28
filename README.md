@@ -1,4 +1,4 @@
-# Portfolio — React Native Developer & Project Manager
+# Portfolio - React Native Developer & Project Manager
 
 A modern, distinctive portfolio showcasing experience as a React Native developer who has evolved into a project manager role.
 
@@ -20,9 +20,9 @@ npm run preview
 
 ## ✏️ Customize
 
-1. **Contact Links** — Update the email and LinkedIn URL in `src/components/Contact.jsx`
-2. **Stats** — Edit the numbers in the Hero section (Years Experience, Projects, etc.) in `src/components/Hero.jsx`
-3. **Profile Photo** — Add an `avatar` image and reference it in the About section if desired
+1. **Contact Links** - Update the email and LinkedIn URL in `src/components/Contact.jsx`
+2. **Stats** - Edit the numbers in the Hero section (Years Experience, Projects, etc.) in `src/components/Hero.jsx`
+3. **Profile Photo** - Add an `avatar` image and reference it in the About section if desired
 
 ## 🛠 Tech Stack
 

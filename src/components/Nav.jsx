@@ -24,12 +24,12 @@ export default function Nav() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-1 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-1 pt-[max(0.25rem,env(safe-area-inset-top))] ${
         scrolled ? 'bg-[#0A0E14]/95 backdrop-blur-xl border-b border-white/5' : ''
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-display font-bold text-xl text-white tracking-tight">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <a href="#" className="font-display font-bold text-lg sm:text-xl text-white tracking-tight">
           Dhanesh M
         </a>
 
@@ -73,7 +73,7 @@ export default function Nav() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-[#0F1419] border-t border-white/5"
           >
-            <div className="px-6 py-4 flex flex-col gap-4">
+            <div className="px-4 py-4 flex flex-col gap-3 sm:gap-4">
               {links.map((link) => (
                 <a
                   key={link.href}

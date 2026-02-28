@@ -17,13 +17,13 @@ const wordReveal = {
   },
 }
 
-const headlineWords = ["Versatile", "Developer", "&"]
+const headlineWords = ["Full-Stack", "Developer", "&"]
 const aiLine = "Project Manager"
-const leadingLine = "With Cursor, I build anywhere"
+const leadingLine = "AI-powered. Across any stack. Delivered globally."
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 pb-8 sm:pt-20 sm:pb-0">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0A0E14] via-[#0F1419] to-[#0A0E14]" />
 
@@ -77,16 +77,16 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
         {/* Headline - word by word reveal */}
         <motion.h1
           variants={container}
           initial="hidden"
           animate="visible"
-          className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white uppercase leading-[1.3] tracking-wide mb-6"
+          className="font-display font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white uppercase leading-[1.3] tracking-wide mb-4 sm:mb-6"
         >
           <div className="flex flex-col items-center gap-2">
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
+            <div className="flex flex-wrap justify-center gap-x-2 sm:gap-x-4 gap-y-1">
               {headlineWords.map((word, i) => (
                 <motion.span key={i} variants={wordReveal} className="inline-block">
                   {word}
@@ -100,14 +100,17 @@ export default function Hero() {
               {aiLine}
             </motion.span>
           </div>
-          <div className="inline-block mt-3 px-5 py-2 rounded-none bg-[#00D9A5]/30">
+          <motion.div
+            variants={wordReveal}
+            className="inline-block mt-3 px-4 sm:px-5 py-2 rounded-none bg-[#00D9A5]/30 max-w-[95vw]"
+          >
             <motion.span
               variants={wordReveal}
-              className="block text-2xl md:text-3xl text-[#00D9A5] font-medium uppercase"
+              className="block text-base sm:text-xl md:text-2xl lg:text-3xl text-[#00D9A5] font-medium uppercase"
             >
               {leadingLine}
             </motion.span>
-          </div>
+          </motion.div>
         </motion.h1>
 
         {/* Buttons - staggered with hover glow */}
@@ -115,7 +118,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mt-16"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-10 sm:mt-16"
         >
           <motion.a
             href="#contact"
@@ -124,7 +127,7 @@ export default function Hero() {
             transition={{ delay: 0.7 }}
             whileHover={{ scale: 1.08, boxShadow: '0 0 40px rgba(0, 217, 165, 0.4)' }}
             whileTap={{ scale: 0.96 }}
-            className="px-8 py-4 rounded-xl bg-[#00D9A5] text-[#0A0E14] font-semibold hover:bg-[#00E5B3] transition-colors"
+            className="px-6 py-3 sm:px-8 sm:py-4 rounded-xl bg-[#00D9A5] text-[#0A0E14] font-semibold hover:bg-[#00E5B3] transition-colors text-sm sm:text-base"
           >
             Let's Connect
           </motion.a>
@@ -135,7 +138,7 @@ export default function Hero() {
             transition={{ delay: 0.8 }}
             whileHover={{ scale: 1.05, borderColor: 'rgba(0, 217, 165, 0.6)' }}
             whileTap={{ scale: 0.98 }}
-            className="px-8 py-4 rounded-xl border-2 border-white/20 text-white font-medium hover:bg-white/5 transition-all duration-300"
+            className="px-6 py-3 sm:px-8 sm:py-4 rounded-xl border-2 border-white/20 text-white font-medium hover:bg-white/5 transition-all duration-300 text-sm sm:text-base"
           >
             View Projects
           </motion.a>
@@ -147,7 +150,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 hidden sm:block"
       >
         <motion.div
           animate={{ y: [0, 14, 0] }}
