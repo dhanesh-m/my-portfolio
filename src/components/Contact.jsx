@@ -88,7 +88,7 @@ export default function Contact() {
               Message on WhatsApp
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/dhanesh-m"
+              href="https://www.linkedin.com/in/dhanesh-m-731aa7304/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
