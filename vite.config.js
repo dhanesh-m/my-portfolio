@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const siteUrl = env.VITE_SITE_URL || 'https://dhaneshm.info'
+  const siteUrl = env.VITE_SITE_URL || 'https://dhaneshm.me'
 
   return {
     plugins: [
@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
       {
         name: 'html-site-url',
         transformIndexHtml(html) {
-          return html.replace(/https:\/\/dhaneshm\.info/g, siteUrl)
+          return html.replace(/https:\/\/dhaneshm\.me/g, siteUrl)
         },
       },
     ],
