@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Nav from './components/Nav'
+import ScrollProgress from './components/ScrollProgress'
 import Sidebar from './components/Sidebar'
 import About from './components/About'
 import Experience from './components/Experience'
@@ -14,15 +15,26 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const triggerOffset = 150
+      const viewportHeight = window.innerHeight
       let current = 'about'
+      let maxVisible = 0
+
       for (const id of SECTION_IDS) {
         const el = document.getElementById(id)
         if (el) {
-          const { top } = el.getBoundingClientRect()
-          if (top <= triggerOffset) current = id
+          const { top, height } = el.getBoundingClientRect()
+          const bottom = top + height
+          const visibleTop = Math.max(top, 0)
+          const visibleBottom = Math.min(bottom, viewportHeight)
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop)
+
+          if (visibleHeight > maxVisible) {
+            current = id
+            maxVisible = visibleHeight
+          }
         }
       }
+
       setActiveSection(current)
     }
 
@@ -32,12 +44,13 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#0A0E14] text-gray-400">
+    <div className="min-h-screen bg-[#0A0E14] text-gray-400 overflow-x-hidden">
+      <ScrollProgress />
       <Sidebar activeSection={activeSection} />
       <Nav activeSection={activeSection} />
 
-      <main className="lg:ml-[280px] pt-16 lg:pt-0 lg:min-h-screen">
-        <div className="px-6 sm:px-8 lg:px-12 py-12 lg:py-16 max-w-4xl">
+      <main className="lg:ml-[280px] pt-14 sm:pt-16 lg:pt-0 lg:min-h-screen">
+        <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 lg:py-16 max-w-4xl pb-[env(safe-area-inset-bottom)]">
           <About />
           <Experience />
           <Projects />

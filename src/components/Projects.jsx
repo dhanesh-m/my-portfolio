@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion'
-
 const projects = [
   {
     name: 'Talkiko',
@@ -18,6 +16,7 @@ const projects = [
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/in/app/mozhi-emotional-wellness-app/id6751511763' },
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.mozhi.customer&hl=en_IN' },
+      { label: 'Website', url: 'https://cigna.org.in/' },
     ],
   },
   {
@@ -27,6 +26,7 @@ const projects = [
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/in/app/oppam-malayalees-wellness-app/id6751511759' },
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.oppam.oppamapp&hl=en_IN' },
+      { label: 'Website', url: 'https://oppam.co.in/' },
     ],
   },
   {
@@ -59,66 +59,55 @@ export default function Projects() {
   return (
     <section id="projects" className="py-16 lg:py-24">
       <div className="max-w-3xl">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5 }}
-          className="text-2xl font-bold text-white mb-10"
-        >
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-8 sm:mb-10">
           Projects
-        </motion.h2>
-        {projects.map((project, i) => (
-          <motion.div
+        </h2>
+        {projects.map((project) => (
+          <div
             key={project.name}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.4, delay: i * 0.05 }}
-            className="py-6 border-t border-gray-700/50 first:border-t-0 first:pt-0"
+            className="group py-5 sm:py-6 px-3 sm:px-4 border-t border-gray-700/50 first:border-t-0 first:pt-0 rounded-lg transition-colors duration-200 hover:bg-[#00D9A5]/5"
           >
             <h3 className="font-semibold text-gray-300 mb-2">
-              {project.name}
-              {project.links[0] && (
+              {project.links[0] ? (
                 <a
                   href={project.links[0].url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-[#00D9A5] transition-colors inline-flex items-center gap-1 ml-2"
+                  className="text-gray-300 hover:text-[#00D9A5] transition-colors"
                 >
-                  <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
+                  {project.name}
                 </a>
+              ) : (
+                project.name
               )}
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-3">{project.description}</p>
+            <p className="text-gray-400 text-sm leading-relaxed mb-3 break-words">{project.description}</p>
             <div className="flex flex-wrap gap-2 mb-2">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 rounded text-xs font-medium bg-white/5 text-gray-500 border border-white/5"
+                  className="px-2 py-0.5 rounded text-xs font-medium bg-white/5 text-gray-500 border border-white/5 transition-colors duration-200 hover:bg-[#00D9A5]/10 hover:border-[#00D9A5]/40 hover:text-[#00D9A5] cursor-default"
                 >
                   {tag}
                 </span>
               ))}
             </div>
             {project.links.length > 0 && (
-              <div className="flex flex-wrap gap-4 text-sm">
+              <div className="flex flex-wrap gap-3 sm:gap-4 text-sm">
                 {project.links.map((link) => (
                   <a
                     key={link.label}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#00D9A5] hover:text-[#00E5B3] font-medium transition-colors"
+                    className="text-[#00D9A5] hover:text-[#00E5B3] font-medium transition-colors duration-200 hover:underline underline-offset-2"
                   >
-                    {link.label} →
+                    {link.label}
                   </a>
                 ))}
               </div>
             )}
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

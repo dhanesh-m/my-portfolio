@@ -39,6 +39,12 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+/* Mobile touch improvements */
+a, button {
+  -webkit-tap-highlight-color: rgba(0, 217, 165, 0.15);
+  touch-action: manipulation;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

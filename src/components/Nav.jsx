@@ -44,7 +44,7 @@ export default function Nav({ activeSection = 'about' }) {
       </nav>
 
       {mobileOpen && (
-        <div className="bg-[#0F1419] border-t border-white/5 px-4 py-4 flex flex-col gap-2">
+        <div className="bg-[#0F1419] border-t border-white/5 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] flex flex-col gap-1">
           {links.map((link) => {
             const sectionId = link.href.slice(1)
             const isActive = activeSection === sectionId
@@ -53,7 +53,7 @@ export default function Nav({ activeSection = 'about' }) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className={`block py-3 transition-colors ${isActive ? 'text-[#00D9A5]' : 'text-gray-400 hover:text-[#00D9A5]'}`}
+                className={`block py-3 min-h-[44px] flex items-center transition-colors ${isActive ? 'text-[#00D9A5]' : 'text-gray-400 hover:text-[#00D9A5]'}`}
               >
                 {link.label.toUpperCase()}
               </a>

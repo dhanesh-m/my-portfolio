@@ -21,7 +21,7 @@ export default function Sidebar({ activeSection = 'about' }) {
         <p className="text-sm text-gray-400 mt-1">Full-Stack Developer & Project Manager</p>
       </a>
       <p className="text-sm text-gray-500 leading-relaxed mb-10 max-w-[200px]">
-        I build mobile and web apps with AI-powered tools. Across any stack. Delivered globally.
+        I build mobile and web apps from the ground up, with traditional and AI-assisted tools. I've developed across any stack, led teams, and delivered globally.
       </p>
 
       <nav className="flex-1">
