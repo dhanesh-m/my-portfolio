@@ -50,7 +50,7 @@ function App() {
       <Nav activeSection={activeSection} />
 
       <main className="lg:ml-[280px] pt-14 sm:pt-16 lg:pt-0 lg:min-h-screen">
-        <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 lg:py-16 max-w-4xl pb-[env(safe-area-inset-bottom)]">
+        <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 lg:py-16 max-w-4xl pb-[env(safe-area-inset-bottom)] overflow-x-hidden">
           <About />
           <Experience />
           <Projects />
