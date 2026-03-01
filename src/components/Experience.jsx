@@ -4,134 +4,92 @@ const experiences = [
   {
     company: 'ZFloc Technologies',
     role: 'Project Manager',
-    period: 'Dec 2023 - Present',
-    duration: '2 yrs',
-    location: 'Full-time',
-    skills: ['Mobile & App Development', 'AI Tools (Cursor, Copilot, Emergent)', 'Google Flow (AI Video)', 'Project Planning', 'Team Leadership', 'Technical Oversight', 'Stakeholder Management', 'Agile Delivery'],
-    highlight: true,
+    period: 'DEC 2023 - PRESENT',
+    description: 'Lead projects and engineering teams. Build and maintain critical components across mobile and web products. Work closely with cross-functional teams, including developers, designers, and product managers to implement and advocate for AI-driven development practices.',
+    url: 'https://zfloc.com',
   },
   {
     company: 'Classteam',
     role: 'Business Development Manager',
-    period: 'Jun 2024 - Jul 2025',
-    duration: '1 yr 2 mos',
-    location: 'Part-time',
-    skills: ['Communication', 'Market Research', 'Partnership Development', 'Strategy'],
+    period: 'JUN 2024 - JUL 2025',
+    description: 'Part-time role focused on communication, market research, partnership development, and strategy.',
+    url: null,
   },
   {
     company: 'NewAgeSys Solutions',
     role: 'Senior Software Engineer',
-    period: 'Jun 2021 - Dec 2023',
-    duration: '2 yrs 7 mos',
-    location: 'Kochi, Kerala · On-site',
-    skills: ['React Native', 'JavaScript', 'TypeScript', 'Mobile Architecture', 'API Integration'],
+    period: 'JUN 2021 - DEC 2023',
+    description: 'Build production React Native apps. Lead mobile architecture, API integration, and team code reviews.',
+    url: null,
   },
   {
     company: 'Simelabs',
     role: 'React Native Developer',
-    period: 'Feb 2020 - Apr 2021',
-    duration: '1 yr 3 mos',
-    location: 'Kochi, Kerala · On-site',
-    skills: ['React Native', 'Cross-platform Development', 'Digital Solutions'],
+    period: 'FEB 2020 - APR 2021',
+    description: 'Cross-platform mobile development and digital solutions.',
+    url: null,
   },
   {
     company: 'Lookings Soft',
     role: 'React Native Developer',
-    period: 'Sep 2018 - Dec 2019',
-    duration: '1 yr 4 mos',
-    location: 'Kochi, Kerala · On-site',
-    skills: ['React Native', 'Mobile App Development', 'UI/UX Implementation'],
+    period: 'SEP 2018 - DEC 2019',
+    description: 'Mobile app development and UI/UX implementation.',
+    url: null,
   },
 ]
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-16 sm:py-24 md:py-32 bg-[#0F1419]/50 relative overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-3xl mx-auto px-4 sm:px-6 mb-10 sm:mb-16"
-      >
-        <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-3 sm:mb-4">
+    <section id="experience" className="py-16 lg:py-24">
+      <div className="max-w-3xl">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5 }}
+          className="text-2xl font-bold text-white mb-10"
+        >
           Journey
-        </h2>
-        <p className="text-gray-400 text-base sm:text-lg">
-          From React Native developer to project manager. Each stop shaped the journey.
-        </p>
-      </motion.div>
+        </motion.h2>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <div className="relative">
-          <div className="absolute left-0 md:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#00D9A5]/50 via-white/10 to-transparent" />
-
-          <div className="space-y-8">
-            {experiences.map((exp, i) => (
-              <motion.div
-                key={exp.company + exp.role}
-                initial={{ opacity: 0, y: 80, scale: 0.96 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: '-80px', amount: 0.2 }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.1,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="relative pl-8 md:pl-16"
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true, margin: '-50px' }}
-                  transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-                  className={`absolute left-0 md:left-4 w-3 h-3 rounded-full -translate-x-1/2 mt-2 z-10 ${
-                    exp.highlight ? 'bg-[#00D9A5] ring-4 ring-[#00D9A5]/20' : 'bg-white/30'
-                  }`}
-                />
-                <motion.div
-                  whileHover={{ x: 6, transition: { duration: 0.2 } }}
-                  className={`p-4 sm:p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:border-[#00D9A5]/30 ${
-                    exp.highlight
-                      ? 'bg-[#00D9A5]/5 border-[#00D9A5]/20'
-                      : 'bg-[#0A0E14]/80 border-white/5 hover:bg-[#0A0E14]'
-                  }`}
-                >
-                  <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className="text-xs font-medium text-[#00D9A5] uppercase tracking-wider">
-                      {exp.period}
-                    </span>
-                    <span className="text-gray-500">·</span>
-                    <span className="text-xs text-gray-500">{exp.duration}</span>
-                  </div>
-                  <h3 className="font-display font-bold text-xl text-white mb-2">{exp.role}</h3>
-                  <p className="text-gray-400 font-medium mb-2">{exp.company}</p>
-                  <div className="mb-4">{exp.location && <p className="text-sm text-gray-500">{exp.location}</p>}</div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true, margin: '-20px' }}
-                    transition={{ delay: 0.25 }}
-                    className="flex flex-wrap gap-2"
-                  >
-                    {exp.skills.map((skill, j) => (
-                      <motion.span
-                        key={skill}
-                        initial={{ opacity: 0, scale: 0.85 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + j * 0.04, type: 'spring', stiffness: 150 }}
-                        className="px-3 py-1 rounded-lg text-xs font-medium bg-white/5 text-gray-400 border border-white/5"
-                      >
-                        {skill}
-                      </motion.span>
-                    ))}
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        {experiences.map((exp, i) => (
+          <motion.div
+            key={exp.company + exp.role}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.4, delay: i * 0.06 }}
+            className="group py-6 border-t border-gray-700/50 first:border-t-0 first:pt-0"
+          >
+            <div className="flex flex-col sm:flex-row sm:gap-6">
+              <span className="text-xs font-medium text-gray-500 uppercase tracking-wider shrink-0 sm:w-28">
+                {exp.period}
+              </span>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-gray-300 mb-2">
+                  {exp.role}
+                  <span className="text-gray-500 font-normal"> · </span>
+                  {exp.url ? (
+                    <a
+                      href={exp.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-[#00D9A5] transition-colors inline-flex items-center gap-1"
+                    >
+                      {exp.company}
+                      <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span>{exp.company}</span>
+                  )}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{exp.description}</p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   )

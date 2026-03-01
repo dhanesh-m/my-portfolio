@@ -127,7 +127,7 @@ export default function Hero() {
             transition={{ delay: 0.7 }}
             whileHover={{ scale: 1.08, boxShadow: '0 0 40px rgba(0, 217, 165, 0.4)' }}
             whileTap={{ scale: 0.96 }}
-            className="px-6 py-3 sm:px-8 sm:py-4 rounded-xl bg-[#00D9A5] text-[#0A0E14] font-semibold hover:bg-[#00E5B3] transition-colors text-sm sm:text-base"
+            className="px-6 py-3 sm:px-8 sm:py-4 min-h-[44px] sm:min-h-0 rounded-xl bg-[#00D9A5] text-[#0A0E14] font-semibold hover:bg-[#00E5B3] transition-colors text-sm sm:text-base inline-flex items-center justify-center"
           >
             Let's Connect
           </motion.a>
@@ -138,7 +138,7 @@ export default function Hero() {
             transition={{ delay: 0.8 }}
             whileHover={{ scale: 1.05, borderColor: 'rgba(0, 217, 165, 0.6)' }}
             whileTap={{ scale: 0.98 }}
-            className="px-6 py-3 sm:px-8 sm:py-4 rounded-xl border-2 border-white/20 text-white font-medium hover:bg-white/5 transition-all duration-300 text-sm sm:text-base"
+            className="px-6 py-3 sm:px-8 sm:py-4 min-h-[44px] sm:min-h-0 rounded-xl border-2 border-white/20 text-white font-medium hover:bg-white/5 transition-all duration-300 text-sm sm:text-base inline-flex items-center justify-center"
           >
             View Projects
           </motion.a>

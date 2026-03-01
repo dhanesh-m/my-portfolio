@@ -10,7 +10,6 @@ const projects = [
       { label: 'App Store', url: 'https://apps.apple.com/in/app/talkiko/id6749892860' },
       { label: 'Website', url: 'https://talkiko.com/' },
     ],
-    accent: 'from-violet-500/20 to-purple-500/10',
   },
   {
     name: 'Mozhi',
@@ -20,7 +19,6 @@ const projects = [
       { label: 'App Store', url: 'https://apps.apple.com/in/app/mozhi-emotional-wellness-app/id6751511763' },
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.mozhi.customer&hl=en_IN' },
     ],
-    accent: 'from-indigo-500/20 to-violet-500/10',
   },
   {
     name: 'Oppam',
@@ -30,7 +28,6 @@ const projects = [
       { label: 'App Store', url: 'https://apps.apple.com/in/app/oppam-malayalees-wellness-app/id6751511759' },
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.oppam.oppamapp&hl=en_IN' },
     ],
-    accent: 'from-purple-500/20 to-fuchsia-500/10',
   },
   {
     name: 'Pro Bono Programme',
@@ -40,16 +37,12 @@ const projects = [
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=ae.difccourts.probono&hl=en_IN' },
       { label: 'App Store', url: 'https://apps.apple.com/in/app/pro-bono-programme/id6749685073' },
     ],
-    accent: 'from-emerald-500/20 to-teal-500/10',
   },
   {
     name: 'Focuzon',
     description: 'A quiet space for focused work. Deep work sessions to help you concentrate and get meaningful work done.',
     tags: ['Web App', 'Productivity'],
-    links: [
-      { label: 'Website', url: 'https://www.focuzon.com/' },
-    ],
-    accent: 'from-cyan-500/20 to-blue-500/10',
+    links: [{ label: 'Website', url: 'https://www.focuzon.com/' }],
   },
   {
     name: 'Bungee',
@@ -59,123 +52,74 @@ const projects = [
       { label: 'Google Play', url: 'https://play.google.com/store/apps/details?id=com.bungee&hl=en_IN' },
       { label: 'App Store', url: 'https://apps.apple.com/us/app/bungee/id6444596791' },
     ],
-    accent: 'from-amber-500/20 to-orange-500/10',
   },
 ]
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
-  },
-}
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 80, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 60,
-      damping: 18,
-    },
-  },
-}
-
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 sm:py-24 md:py-32 bg-[#0F1419]/50 relative overflow-hidden">
-      {/* Animated decorative blobs */}
-      <motion.div
-        animate={{ x: [0, 30, 0], y: [0, -20, 0], scale: [1, 1.1, 1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute top-20 right-0 w-72 h-72 bg-[#00D9A5]/10 rounded-full blur-[100px]"
-      />
-      <motion.div
-        animate={{ x: [0, -40, 0], y: [0, 30, 0], scale: [1, 1.15, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-20 left-0 w-96 h-96 bg-blue-500/8 rounded-full blur-[120px]"
-      />
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
+    <section id="projects" className="py-16 lg:py-24">
+      <div className="max-w-3xl">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-10 sm:mb-16"
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5 }}
+          className="text-2xl font-bold text-white mb-10"
         >
-          <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-3 sm:mb-4">
-            Main Projects
-          </h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-2xl">
-            Apps that reached thousands of users.
-          </p>
-        </motion.div>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-120px", amount: 0.1 }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
-        >
-          {projects.map((project) => (
-            <motion.div
-              key={project.name}
-              variants={cardVariants}
-              whileHover={{ y: -12, scale: 1.02, transition: { duration: 0.3 } }}
-              className="group p-5 sm:p-6 md:p-8 rounded-2xl border border-white/5 bg-[#0A0E14]/80 backdrop-blur-sm hover:border-[#00D9A5]/30 hover:shadow-xl hover:shadow-[#00D9A5]/5 transition-all duration-300"
-            >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${project.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10`}
-              />
-              <div className="relative">
-                <div className="mb-4">
-                  <span className="text-2xl sm:text-3xl font-bold text-white font-display group-hover:text-[#00D9A5] transition-colors">
-                    {project.name.split(' · ')[0]}
-                  </span>
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                  {project.description}
-                </p>
-                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">
-                  Tech stack
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1.5 rounded-lg text-sm font-medium bg-[#00D9A5]/10 text-[#00D9A5] border border-[#00D9A5]/30"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                {project.links.length > 0 && (
-                  <div className="flex flex-wrap gap-3">
-                    {project.links.map((link) => (
-                      <a
-                        key={link.label}
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-sm text-[#00D9A5] hover:text-[#00E5B3] font-medium transition-colors"
-                      >
-                        {link.label} →
-                      </a>
-                    ))}
-                  </div>
-                )}
+          Projects
+        </motion.h2>
+        {projects.map((project, i) => (
+          <motion.div
+            key={project.name}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.4, delay: i * 0.05 }}
+            className="py-6 border-t border-gray-700/50 first:border-t-0 first:pt-0"
+          >
+            <h3 className="font-semibold text-gray-300 mb-2">
+              {project.name}
+              {project.links[0] && (
+                <a
+                  href={project.links[0].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-[#00D9A5] transition-colors inline-flex items-center gap-1 ml-2"
+                >
+                  <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              )}
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-3">{project.description}</p>
+            <div className="flex flex-wrap gap-2 mb-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-2 py-0.5 rounded text-xs font-medium bg-white/5 text-gray-500 border border-white/5"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            {project.links.length > 0 && (
+              <div className="flex flex-wrap gap-4 text-sm">
+                {project.links.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#00D9A5] hover:text-[#00E5B3] font-medium transition-colors"
+                  >
+                    {link.label} →
+                  </a>
+                ))}
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            )}
+          </motion.div>
+        ))}
       </div>
     </section>
   )
