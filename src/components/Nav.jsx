@@ -21,8 +21,8 @@ export default function Nav({ activeSection = 'about' }) {
   }, [mobileOpen])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-[#0A0E14]/95 backdrop-blur-xl border-b border-white/5 pt-[max(0.25rem,env(safe-area-inset-top))]">
-      <nav className="px-4 py-3 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-[#0A0E14]/95 backdrop-blur-xl border-b border-white/5 pt-[max(0.25rem,env(safe-area-inset-top))] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
+      <nav className="px-4 py-3 flex items-center justify-between max-w-[100vw]">
         <a href="#" className="font-bold text-lg text-white">
           Dhanesh M
         </a>

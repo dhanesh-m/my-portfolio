@@ -100,7 +100,7 @@ export default function Projects() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#00D9A5] hover:text-[#00E5B3] font-medium transition-colors duration-200 hover:underline underline-offset-2"
+                    className="text-[#00D9A5] hover:text-[#00E5B3] font-medium transition-colors duration-200 hover:underline underline-offset-2 py-2 -my-2 min-h-[44px] inline-flex items-center"
                   >
                     {link.label}
                   </a>

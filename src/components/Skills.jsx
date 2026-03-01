@@ -46,7 +46,7 @@ export default function Skills() {
             className="space-y-3"
           >
             <h3 className="font-semibold text-gray-300">{category.title}</h3>
-            <div className="flex flex-wrap gap-x-2 gap-y-2 items-center overflow-hidden">
+            <div className="flex flex-wrap gap-x-2 gap-y-2 items-center">
               {category.skills.map((skill) => (
                 <span
                   key={skill}

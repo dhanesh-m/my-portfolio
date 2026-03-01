@@ -42,7 +42,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.4, delay: 0.24 }}
-          className="mt-8 p-4 border-l-2 border-[#00D9A5]/30 pl-4 sm:pl-6 overflow-hidden"
+          className="mt-8 p-4 border-l-2 border-[#00D9A5]/30 pl-4 sm:pl-6 break-words"
         >
           <h3 className="text-white font-semibold mb-2">The Foundation</h3>
           <p className="text-gray-300 font-medium text-sm">Cochin University of Science and Technology (CUSAT)</p>

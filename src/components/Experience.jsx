@@ -52,7 +52,7 @@ export default function Experience() {
           Journey
         </motion.h2>
 
-        <div className="relative pl-6 sm:pl-0 sm:ml-0">
+        <div className="relative pl-8 sm:pl-0 sm:ml-0 overflow-hidden">
           {/* Vertical timeline line - positioned in gap between dates and content */}
           <motion.div
             initial={{ scaleY: 0, opacity: 0.5 }}
@@ -60,7 +60,7 @@ export default function Experience() {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             style={{ transformOrigin: 'top' }}
-            className="absolute left-2 sm:left-[10rem] top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#00D9A5] via-[#00D9A5]/60 to-transparent"
+            className="absolute left-3 sm:left-[10rem] top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#00D9A5] via-[#00D9A5]/60 to-transparent"
           />
 
           {experiences.map((exp, i) => (
@@ -78,7 +78,7 @@ export default function Experience() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true, margin: '-20px' }}
                 transition={{ type: 'spring', stiffness: 180, damping: 14, delay: 0.1 + i * 0.06 }}
-                className="absolute left-2 top-8 w-3.5 h-3.5 -translate-x-1/2 rounded-full bg-[#00D9A5] ring-4 ring-[#0A0E14] shrink-0 sm:left-[10rem] sm:top-10 transition-all duration-300 ease-out group-hover:scale-125 group-hover:ring-[#00D9A5]/40 group-hover:shadow-[0_0_12px_rgba(0,217,165,0.4)]"
+                className="absolute left-3 top-7 w-3 h-3 sm:w-3.5 sm:h-3.5 -translate-x-1/2 rounded-full bg-[#00D9A5] ring-[3px] sm:ring-4 ring-[#0A0E14] shrink-0 sm:left-[10rem] sm:top-10 transition-all duration-300 ease-out group-hover:scale-125 group-hover:ring-[#00D9A5]/40 group-hover:shadow-[0_0_12px_rgba(0,217,165,0.4)]"
               />
 
               <span className="text-xs font-medium text-gray-500 uppercase tracking-wider shrink-0 sm:w-36 sm:pr-4 sm:pt-0.5 sm:whitespace-nowrap break-words">
